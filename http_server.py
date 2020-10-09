@@ -141,6 +141,7 @@ class HttpServer():
 
         elif os.path.isfile(absolute_path):
             content = b""
+            #   This walrus operator only work in python 3.8 or above.
             with open(absolute_path, "rb") as f:
                 while (byte := f.read(1)):
                     content += byte
